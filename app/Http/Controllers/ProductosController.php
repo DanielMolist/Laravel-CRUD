@@ -12,9 +12,10 @@ class ProductosController extends Controller
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $request->user()->authorizeRoles('admin');
         $datos['productos'] = Productos::paginate(3);
         return view('productos.index', $datos);
     }

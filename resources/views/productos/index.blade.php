@@ -7,7 +7,7 @@
     <div class="col-lg-12 text-center">
         @if(Session::has('mensaje_confirm'))
         <div class="alert alert-info">
-            <strong>¡Atento!</strong>{{Session::get('mensaje_confirm')}}
+            <strong>--></strong>{{Session::get('mensaje_confirm')}}
         </div>
         @endif
     </div>
@@ -35,7 +35,7 @@
             <td class="pt-5">{{$fila->cantidad}}</td>
             <td class="pt-5">
                 <form action="{{url('/productos/'.$fila->id)}}" method="post">
-
+                    
                     <!-- Boton Editar -->
                     <a href="{{url('/productos/'.$fila->id.'/edit')}}" class="btn btn-primary">Editar</a>
 
@@ -43,6 +43,7 @@
                     {{method_field('DELETE')}}
                     <!-- Boton Borrar -->
                     <button type="submit" class="btn btn-danger" onclick="return confirm('¡Cuidado! ¿Desea borrar el producto?')">Borrar</button>
+                
                 </form>
             </td>
         </tr>
