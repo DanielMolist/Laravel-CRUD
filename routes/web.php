@@ -19,6 +19,6 @@ Route::resource('productos', 'ProductosController')->middleware('auth'); //Petic
 
 //Route::get('/productos', 'ProductosController@index');
 //Route::get('/productos/create', 'ProductosController@create');
-Auth::routes(['reset'=>false]);//register'=>false para quitar el registro de nuevos usuarios
+Auth::routes(['reset'=>true]);//register'=>false para quitar el registro de nuevos usuarios
 
 Route::get('/home', 'HomeController@index')->name('home');
